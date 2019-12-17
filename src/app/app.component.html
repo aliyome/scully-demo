@@ -3,5 +3,11 @@
 <router-outlet></router-outlet>
 
 <footer>
-  footer
+  <ul>
+    <li *ngFor="let router of scully.available$ | async">
+      <a [routerLink]="router.route" routerLinkActive="router-link-active">
+        {{ router.title || router.route }}
+      </a>
+    </li>
+  </ul>
 </footer>
